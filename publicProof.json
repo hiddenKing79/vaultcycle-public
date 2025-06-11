@@ -1,0 +1,41 @@
+{
+  "last_updated": "2025-06-11T17:48:10.113Z",
+  "payouts": [
+    {
+      "payout_id": "PAYOUT-1749664090067-4",
+      "timestamp": "2025-06-11T17:48:10.067Z",
+      "platform": "Crypto.com",
+      "reward": "$25 CRO bonus",
+      "amount": 3.37,
+      "destination": "vault-wallet-address",
+      "status": "COMPLETE"
+    },
+    {
+      "payout_id": "PAYOUT-1749664090101-5",
+      "timestamp": "2025-06-11T17:48:10.101Z",
+      "platform": "Coinbase",
+      "reward": "$10 BTC",
+      "amount": 1.3,
+      "destination": "vault-wallet-address",
+      "status": "COMPLETE"
+    },
+    {
+      "payout_id": "PAYOUT-1749664090102-6",
+      "timestamp": "2025-06-11T17:48:10.102Z",
+      "platform": "Cash App",
+      "reward": "$5 bonus",
+      "amount": 1.95,
+      "destination": "vault-wallet-address",
+      "status": "COMPLETE"
+    },
+    {
+      "payout_id": "PAYOUT-1749664090103-7",
+      "timestamp": "2025-06-11T17:48:10.103Z",
+      "platform": "OKX Airdrop",
+      "reward": "Spin-to-win daily",
+      "amount": 4.98,
+      "destination": "vault-wallet-address",
+      "status": "COMPLETE"
+    }
+  ]
+}

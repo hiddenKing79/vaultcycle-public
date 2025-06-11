@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VaultCycle Proof of Value</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #0d0d0d;
+      color: #00ffcc;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.2em;
+    }
+    .timestamp {
+      font-size: 1em;
+      color: #999;
+    }
+    table {
+      margin: auto;
+      margin-top: 2em;
+      border-collapse: collapse;
+      width: 80%;
+      color: #fff;
+    }
+    th, td {
+      border: 1px solid #444;
+      padding: 10px;
+    }
+    th {
+      background-color: #222;
+    }
+    .sigil {
+      margin-top: 3em;
+      font-size: 3em;
+      opacity: 0.1;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌐 VaultCycle: Proof of Value</h1>
+  <div class="timestamp" id="updated"></div>
+  <table>
+    <thead>
+      <tr><th>Platform</th><th>Amount ($)</th></tr>
+    </thead>
+    <tbody id="payouts"></tbody>
+  </table>
+  <div class="sigil">🌀</div>
+
+  <script>
+    fetch('publicProof.json')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('updated').innerText = "Last updated: " + new Date(data.last_updated).toLocaleString();
+        let rows = data.payouts.map(p => `<tr><td>${p.platform}</td><td>$${p.amount.toFixed(2)}</td></tr>`);
+        document.getElementById('payouts').innerHTML = rows.join('');
+      });
+  </script>
+</body>
+</html>
