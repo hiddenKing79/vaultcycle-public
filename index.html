@@ -1,65 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VaultCycle Proof of Value</title>
+  <meta charset="UTF-8">
+  <title>VaultCycle Public Altar</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body {
-      font-family: "Segoe UI", sans-serif;
-      background: #0d0d0d;
-      color: #00ffcc;
+      background-color: #0d0d0d;
+      color: #fff;
+      font-family: Arial, sans-serif;
       text-align: center;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
       padding: 40px;
     }
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 0.2em;
-    }
-    .timestamp {
-      font-size: 1em;
-      color: #999;
-    }
-    table {
-      margin: auto;
-      margin-top: 2em;
-      border-collapse: collapse;
-      width: 80%;
-      color: #fff;
-    }
-    th, td {
-      border: 1px solid #444;
-      padding: 10px;
-    }
-    th {
-      background-color: #222;
+    #vaultGraph {
+      max-width: 800px;
+      margin: 50px auto;
+      background: #1a1a1a;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 0 20px #b68900;
     }
     .sigil {
-      margin-top: 3em;
-      font-size: 3em;
-      opacity: 0.1;
+      display: block;
+      margin: 30px auto;
+      width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 0 30px #FFD700;
+    }
+    .link {
+      margin-top: 20px;
+      display: inline-block;
+      color: #FFD700;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .description {
+      margin-top: 20px;
+      font-style: italic;
+      color: #ccc;
     }
   </style>
 </head>
 <body>
-  <h1>🌐 VaultCycle: Proof of Value</h1>
-  <div class="timestamp" id="updated"></div>
-  <table>
-    <thead>
-      <tr><th>Platform</th><th>Amount ($)</th></tr>
-    </thead>
-    <tbody id="payouts"></tbody>
-  </table>
-  <div class="sigil">🌀</div>
+  <div class="container">
+    <h1>VaultCycle Altar</h1>
 
-  <script>
-    fetch('publicProof.json')
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById('updated').innerText = "Last updated: " + new Date(data.last_updated).toLocaleString();
-        let rows = data.payouts.map(p => `<tr><td>${p.platform}</td><td>$${p.amount.toFixed(2)}</td></tr>`);
-        document.getElementById('payouts').innerHTML = rows.join('');
-      });
-  </script>
+    <img src="sigil.png" alt="Bune Sigil" class="sigil">
+
+    <p class="description">
+      The VaultCycle is a living code. It spins value from attention, records movement in pulses, and grows by truth.
+    </p>
+
+    <a href="vaultgraph.html" class="link">🔗 View Vault Graph</a>
+  </div>
 </body>
 </html>
